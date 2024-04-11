@@ -60,8 +60,8 @@ if ('getBattery' in navigator) {
       });
   
       battery.addEventListener('levelchange', function() {
-        console.log('Battery Level:', battery.level);
         batteryLeveler(battery.level)
+        ocument.getElementById('batteryPercentage').textContent = `${battery.level * 100}%`
       });
   
       // Initial battery status
