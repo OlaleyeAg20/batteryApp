@@ -40,7 +40,7 @@ const batteryContainer = document.getElementById('battery')
 
 
 function batteryLeveler(level){
-    batteryLevel = level <= 0.2 ? 2 : level <= 0.4 ? 3 : level <= 0.6 ? 4 : level <= 0.8 ? 5 : 6
+    let batteryLevel = level <= 0.2 ? 2 : level <= 0.4 ? 3 : level <= 0.6 ? 4 : level <= 0.8 ? 5 : 6
     // batteryContainer.innerHTML += level <= 0.5 ? `<div class="cell five"></div>` * 5 : `<div class="cell five"></div>`
     document.querySelectorAll(`.cell:nth-child(-n + ${batteryLevel})`).forEach((e)=>{
         e.style.background = level <= 0.4 ? "#fe2212" : level <= 0.7 ? "#F2B50F" : "#0F9D58"
