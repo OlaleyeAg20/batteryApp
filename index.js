@@ -62,6 +62,7 @@ if ('getBattery' in navigator) {
       battery.addEventListener('levelchange', function() {
         batteryLeveler(battery.level)
         document.getElementById('batteryPercentage').textContent = `${battery.level * 100}%`
+      document.getElementById('batteryTip').style.background = battery.level <= 1 && battery.level >= 0.9 ? "#0F9D58" : "none"
       });
   
       // Initial battery status
